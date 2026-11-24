@@ -1,0 +1,1304 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#081322">
+<meta name="description" content="BLOCK RE LTD — Digital products, mobile experiences, innovation, privacy and customer support.">
+<title>BLOCK RE LTD | Digital Innovation</title>
+
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%23081322'/%3E%3Cpath d='M15 13h25l10 10-10 10 10 10-10 8H15V13zm11 10v7h11l4-4-4-3H26zm0 16v5h11l4-3-4-2H26z' fill='%23D9B779'/%3E%3C/svg%3E">
+
+<style>
+:root {
+  --bg: #081322;
+  --surface: #101e32;
+  --surface-light: #16283e;
+  --blue: #64a8ff;
+  --gold: #d9b779;
+  --white: #f5f7fa;
+  --muted: #a9b9cd;
+  --border: rgba(164,190,225,.15);
+  --radius: 22px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 105px;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--white);
+  line-height: 1.7;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+button, a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a:focus-visible, button:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 5px;
+}
+
+.container {
+  width: min(1180px, 90%);
+  margin: auto;
+}
+
+.skip-link {
+  position: fixed;
+  top: -100px;
+  left: 16px;
+  background: var(--gold);
+  color: var(--bg);
+  padding: 12px 20px;
+  z-index: 999;
+}
+
+.skip-link:focus {
+  top: 12px;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(8,19,34,.94);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+}
+
+.navbar {
+  min-height: 85px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 28px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.brand-mark {
+  width: 46px;
+  height: 46px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg,#f0d7a3,#b88b49);
+  color: #081322;
+  border-radius: 13px;
+  box-shadow: 0 6px 24px rgba(217,183,121,.14);
+}
+
+.brand-mark svg {
+  width: 28px;
+  height: 28px;
+}
+
+.brand-name {
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+  line-height: 1.3;
+}
+
+.brand-sub {
+  font-size: 9px;
+  color: var(--muted);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-links a {
+  font-size: 14px;
+  color: var(--muted);
+  font-weight: 600;
+  transition: color .2s;
+}
+
+.nav-links a:hover {
+  color: var(--gold);
+}
+
+.nav-links .nav-contact {
+  padding: 11px 22px;
+  border: 1px solid rgba(217,183,121,.5);
+  border-radius: 10px;
+  color: var(--gold);
+}
+
+.menu-toggle {
+  display: none;
+  color: white;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+}
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 680px;
+  display: flex;
+  align-items: center;
+  background:
+    radial-gradient(ellipse at 80% 45%,rgba(39,92,163,.28),transparent 55%),
+    radial-gradient(ellipse at 0% 100%,rgba(217,183,121,.05),transparent 45%);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    linear-gradient(rgba(100,168,255,.035) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(100,168,255,.035) 1px,transparent 1px);
+  background-size: 58px 58px;
+  mask-image: linear-gradient(to bottom,black,transparent);
+}
+
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1.12fr 1fr;
+  align-items: center;
+  gap: 45px;
+  padding: 90px 0;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--gold);
+  letter-spacing: 2.2px;
+  font-weight: 700;
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+.eyebrow::before {
+  content: "";
+  height: 1px;
+  width: 25px;
+  background: var(--gold);
+}
+
+.hero h1 {
+  font-size: clamp(46px,5.6vw,80px);
+  line-height: 1.1;
+  letter-spacing: -3px;
+  margin: 24px 0;
+  font-weight: 750;
+}
+
+.gradient-text {
+  display: block;
+  background: linear-gradient(100deg,#a1d0ff,#64a8ff,#80aaf0);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-description {
+  font-size: 18px;
+  color: var(--muted);
+  max-width: 530px;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 34px;
+}
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 11px;
+  padding: 15px 25px;
+  font-weight: 700;
+  font-size: 14px;
+  transition: transform .25s,box-shadow .25s,background .25s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg,#eed3a0,#cba463);
+  color: #081322;
+  box-shadow: 0 8px 35px rgba(217,183,121,.14);
+}
+
+.btn-secondary {
+  background: rgba(255,255,255,.04);
+  border: 1px solid var(--border);
+  color: var(--white);
+}
+
+.btn-secondary:hover {
+  background: rgba(100,168,255,.1);
+}
+
+.hero-visual {
+  position: relative;
+  width: 100%;
+  max-width: 530px;
+  margin: auto;
+}
+
+.hero-visual svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  overflow: visible;
+}
+
+.floating-cube {
+  animation: floating 7s ease-in-out infinite;
+}
+
+.orbit-dash {
+  transform-origin: 250px 250px;
+  animation: rotation 50s linear infinite;
+}
+
+@keyframes floating {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes rotation {
+  to { transform: rotate(360deg); }
+}
+
+.visual-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: rgba(15,30,49,.94);
+  padding: 15px 20px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 16px 35px rgba(0,0,0,.25);
+}
+
+.visual-label strong {
+  display: block;
+  font-size: 14px;
+}
+
+.visual-label span {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.status-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--blue);
+  margin-right: 6px;
+}
+
+.values-strip {
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: rgba(255,255,255,.015);
+}
+
+.values-inner {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  padding: 26px 0;
+}
+
+.value-item {
+  text-align: center;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+  letter-spacing: .7px;
+}
+
+.value-item:not(:last-child) {
+  border-right: 1px solid var(--border);
+}
+
+.value-item span {
+  color: var(--gold);
+  margin-right: 8px;
+}
+
+section {
+  padding: 105px 0;
+}
+
+.hero {
+  padding: 0;
+}
+
+.section-heading {
+  max-width: 730px;
+  margin: 0 auto 48px;
+  text-align: center;
+}
+
+.section-heading h2,
+.about-content h2,
+.contact-content h2 {
+  font-size: clamp(32px,4vw,48px);
+  line-height: 1.2;
+  letter-spacing: -1.6px;
+  margin: 18px 0;
+}
+
+.section-heading p,
+.about-content p,
+.contact-content p {
+  color: var(--muted);
+  font-size: 16px;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 22px;
+}
+
+.feature-card {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(145deg,var(--surface-light),var(--surface));
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px;
+  transition: transform .3s,border-color .3s,box-shadow .3s;
+}
+
+.feature-card:hover {
+  transform: translateY(-7px);
+  border-color: rgba(100,168,255,.45);
+  box-shadow: 0 15px 50px rgba(0,0,0,.2);
+}
+
+.feature-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle,rgba(100,168,255,.09),transparent 70%);
+  pointer-events: none;
+}
+
+.feature-icon {
+  width: 55px;
+  height: 55px;
+  border-radius: 15px;
+  background: rgba(100,168,255,.10);
+  border: 1px solid rgba(100,168,255,.2);
+  color: var(--blue);
+  display: grid;
+  place-items: center;
+  margin-bottom: 25px;
+}
+
+.feature-icon svg {
+  width: 27px;
+  height: 27px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.feature-card h3 {
+  font-size: 21px;
+  margin-bottom: 12px;
+}
+
+.feature-card p {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.about {
+  background: rgba(255,255,255,.016);
+  border-block: 1px solid var(--border);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 75px;
+  align-items: center;
+}
+
+.about-art {
+  position: relative;
+  min-height: 365px;
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle at 50% 40%,rgba(54,113,190,.24),transparent 65%),
+    linear-gradient(140deg,#142a46,#0b182b);
+}
+
+.about-art::before,
+.about-art::after {
+  content: "";
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  border: 1px solid rgba(100,168,255,.18);
+  border-radius: 45px;
+  transform: rotate(45deg);
+}
+
+.about-art::after {
+  width: 220px;
+  height: 220px;
+}
+
+.about-monogram {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.about-monogram strong {
+  font-size: clamp(75px,10vw,120px);
+  line-height: 1;
+  letter-spacing: -8px;
+  background: linear-gradient(145deg,#f3deb7,#bc9354);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.about-monogram p {
+  letter-spacing: 5px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--muted);
+  margin-top: 17px;
+}
+
+.about-content p + p {
+  margin-top: 18px;
+}
+
+.principles {
+  display: grid;
+  gap: 13px;
+  margin-top: 28px;
+  list-style: none;
+}
+
+.principles li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--white);
+  font-size: 14px;
+}
+
+.check {
+  display: grid;
+  place-items: center;
+  width: 23px;
+  height: 23px;
+  border-radius: 50%;
+  background: rgba(217,183,121,.1);
+  color: var(--gold);
+  font-size: 13px;
+  flex-shrink: 0;
+}
+
+.product-card {
+  padding: 34px;
+}
+
+.product-number {
+  font-size: 12px;
+  color: var(--gold);
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+}
+
+.privacy-section {
+  padding-top: 0;
+}
+
+.privacy-panel {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 35px;
+  padding: 48px;
+  border: 1px solid rgba(100,168,255,.2);
+  border-radius: 26px;
+  background:
+    radial-gradient(ellipse at top right,rgba(100,168,255,.1),transparent 65%),
+    var(--surface);
+}
+
+.privacy-panel h2 {
+  font-size: clamp(27px,3.5vw,38px);
+  line-height: 1.2;
+  margin: 15px 0;
+}
+
+.privacy-panel p {
+  color: var(--muted);
+  max-width: 650px;
+  font-size: 15px;
+}
+
+.contact {
+  background: linear-gradient(150deg,#11243c,#0a1728);
+  border-top: 1px solid var(--border);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.contact-card {
+  padding: 32px;
+  border-radius: var(--radius);
+  background: rgba(8,19,34,.6);
+  border: 1px solid var(--border);
+}
+
+.contact-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 17px;
+  padding: 20px 0;
+}
+
+.contact-row:first-child {
+  padding-top: 0;
+}
+
+.contact-row:last-child {
+  padding-bottom: 0;
+}
+
+.contact-row:not(:last-child) {
+  border-bottom: 1px solid var(--border);
+}
+
+.contact-symbol {
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--border);
+  border-radius: 11px;
+  color: var(--gold);
+  background: rgba(217,183,121,.05);
+  font-size: 19px;
+}
+
+.contact-row strong {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 3px;
+}
+
+.contact-row p {
+  font-size: 13px;
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+
+footer {
+  background: #060f1c;
+  padding: 65px 0 25px;
+  border-top: 1px solid var(--border);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr;
+  gap: 45px;
+  padding-bottom: 40px;
+}
+
+.footer-intro {
+  margin-top: 20px;
+  color: var(--muted);
+  font-size: 13px;
+  max-width: 330px;
+}
+
+.footer-column h3 {
+  font-size: 14px;
+  margin-bottom: 18px;
+}
+
+.footer-column a {
+  display: block;
+  color: var(--muted);
+  font-size: 13px;
+  margin: 10px 0;
+}
+
+.footer-column a:hover {
+  color: var(--gold);
+}
+
+.footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: space-between;
+  border-top: 1px solid var(--border);
+  padding-top: 25px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.back-top {
+  color: var(--gold);
+}
+
+@media (max-width: 950px) {
+  .nav-links {
+    gap: 18px;
+  }
+
+  .hero-inner {
+    gap: 20px;
+  }
+
+  .feature-card {
+    padding: 25px;
+  }
+
+  .about-grid {
+    gap: 35px;
+  }
+
+  .contact-grid {
+    gap: 30px;
+  }
+}
+
+@media (max-width: 760px) {
+  .navbar {
+    min-height: 74px;
+  }
+
+  .menu-toggle {
+    display: grid;
+    place-items: center;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #101e32;
+    border-bottom: 1px solid var(--border);
+    padding: 24px 5%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links .nav-contact {
+    text-align: center;
+  }
+
+  .hero-inner {
+    grid-template-columns: 1fr;
+    padding: 65px 0 55px;
+    gap: 35px;
+  }
+
+  .hero h1 {
+    letter-spacing: -2px;
+  }
+
+  .hero-description {
+    font-size: 16px;
+  }
+
+  .hero-visual {
+    max-width: 380px;
+  }
+
+  .card-grid,
+  .about-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  section {
+    padding: 70px 0;
+  }
+
+  .values-inner {
+    gap: 10px;
+    padding: 20px 0;
+  }
+
+  .value-item {
+    font-size: 10px;
+    letter-spacing: 0;
+  }
+
+  .value-item span {
+    display: block;
+    margin: 0 0 5px;
+  }
+
+  .about-art {
+    min-height: 300px;
+  }
+
+  .privacy-panel {
+    grid-template-columns: 1fr;
+    padding: 30px;
+  }
+
+  .privacy-panel .btn {
+    justify-self: start;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+
+  .footer-company {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 380px) {
+  .brand-name {
+    font-size: 16px;
+  }
+
+  .hero h1 {
+    font-size: 41px;
+  }
+
+  .actions .btn {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+</style>
+</head>
+
+<body id="top">
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header>
+  <div class="container navbar">
+    <a class="brand" href="#top" aria-label="BLOCK RE LTD Home">
+      <div class="brand-mark">
+        <svg viewBox="0 0 40 40" aria-hidden="true">
+          <path d="M7 4h17l9 8-9 8 9 8-9 8H7V4zm8 8v5h8l3-3-3-2h-8zm0 15v4h8l3-2-3-2h-8z" fill="currentColor"/>
+        </svg>
+      </div>
+      <div>
+        <div class="brand-name">BLOCK RE LTD</div>
+        <div class="brand-sub">Digital Innovation</div>
+      </div>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle"
+      aria-label="Toggle navigation"
+      aria-expanded="false"
+      aria-controls="navigation">
+      <svg width="23" height="23" viewBox="0 0 24 24"
+        fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M3 6h18M3 12h18M3 18h18"/>
+      </svg>
+    </button>
+
+    <nav class="nav-links" id="navigation" aria-label="Main navigation">
+      <a href="#top">Home</a>
+      <a href="#about">About Us</a>
+      <a href="#products">Products</a>
+      <a href="#privacy">Privacy</a>
+      <a class="nav-contact" href="#contact">Contact Us</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero">
+  <div class="container hero-inner">
+    <div class="hero-content">
+      <div class="eyebrow">Technology. Creativity. Purpose.</div>
+
+      <h1>
+        Building digital
+        <span class="gradient-text">experiences.</span>
+      </h1>
+
+      <p class="hero-description">
+        BLOCK RE LTD is focused on creating thoughtful digital
+        products and engaging mobile experiences, with people,
+        innovation and responsible technology at the heart of
+        our vision.
+      </p>
+
+      <div class="actions">
+        <a href="#about" class="btn btn-primary">
+          Discover Our Vision <span aria-hidden="true">→</span>
+        </a>
+        <a href="#products" class="btn btn-secondary">
+          Explore Products
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <svg viewBox="0 0 500 500" role="img"
+        aria-label="Abstract geometric illustration representing digital innovation">
+        <defs>
+          <linearGradient id="topFace" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#b3d9ff"/>
+            <stop offset="100%" stop-color="#4c85c9"/>
+          </linearGradient>
+          <linearGradient id="leftFace" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#467dc0"/>
+            <stop offset="100%" stop-color="#142b4e"/>
+          </linearGradient>
+          <linearGradient id="rightFace" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#285991"/>
+            <stop offset="100%" stop-color="#10223b"/>
+          </linearGradient>
+          <radialGradient id="glow">
+            <stop offset="0%" stop-color="#5099f5" stop-opacity=".3"/>
+            <stop offset="100%" stop-color="#5099f5" stop-opacity="0"/>
+          </radialGradient>
+          <filter id="cubeShadow" x="-50%" y="-50%" width="200%" height="200%">
+            <feDropShadow dx="0" dy="20" stdDeviation="20"
+              flood-color="#000000" flood-opacity=".35"/>
+          </filter>
+        </defs>
+
+        <circle cx="250" cy="250" r="230" fill="url(#glow)"/>
+
+        <g fill="none" stroke="#78aaf0">
+          <circle cx="250" cy="250" r="205" opacity=".16"/>
+          <circle cx="250" cy="250" r="171" opacity=".2"/>
+          <circle cx="250" cy="250" r="137" opacity=".2"/>
+          <circle class="orbit-dash" cx="250" cy="250" r="188"
+            stroke-dasharray="3 14" opacity=".45"/>
+          <ellipse cx="250" cy="250" rx="215" ry="95"
+            transform="rotate(-32 250 250)" opacity=".22"/>
+        </g>
+
+        <g fill="#d9b779">
+          <circle cx="250" cy="45" r="5"/>
+          <circle cx="455" cy="250" r="3"/>
+          <circle cx="93" cy="349" r="4"/>
+        </g>
+
+        <g fill="#64a8ff">
+          <circle cx="86" cy="144" r="4"/>
+          <circle cx="420" cy="135" r="4"/>
+          <circle cx="328" cy="440" r="5"/>
+        </g>
+
+        <g class="floating-cube" filter="url(#cubeShadow)">
+          <path d="M250 110L375 180L250 250L125 180Z"
+            fill="url(#topFace)" stroke="#a7d0ff" stroke-width="1.2"/>
+          <path d="M125 180L250 250V390L125 320Z"
+            fill="url(#leftFace)" stroke="#77a5d7" stroke-width="1.2"/>
+          <path d="M250 250L375 180V320L250 390Z"
+            fill="url(#rightFace)" stroke="#6695cb" stroke-width="1.2"/>
+
+          <path d="M250 140L325 182L250 224L175 182Z"
+            fill="#122941" opacity=".55" stroke="#d9b779" stroke-width="1.5"/>
+
+          <path d="M250 155L300 183L250 211L200 183Z"
+            fill="#d9b779" opacity=".9"/>
+
+          <g stroke="#99caff" stroke-width="1" fill="none" opacity=".4">
+            <path d="M145 221L230 269V351"/>
+            <path d="M270 267L355 220V303"/>
+            <path d="M145 251L210 289"/>
+            <path d="M290 302L355 266"/>
+          </g>
+        </g>
+      </svg>
+
+      <div class="visual-label">
+        <strong><span class="status-dot"></span>BLOCK RE LTD</strong>
+        <span>Designed with purpose. Built for people.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="values-strip">
+  <div class="container values-inner">
+    <div class="value-item"><span>✦</span> Digital Innovation</div>
+    <div class="value-item"><span>◇</span> User-Focused Design</div>
+    <div class="value-item"><span>◎</span> Responsible Technology</div>
+  </div>
+</div>
+
+<section id="expertise">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">What Drives Us</span>
+      <h2>Designed with purpose.</h2>
+      <p>
+        Our approach brings together technology, thoughtful design
+        and a commitment to improving digital experiences.
+      </p>
+    </div>
+
+    <div class="card-grid">
+      <article class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="6" y="2" width="12" height="20" rx="3"/>
+            <path d="M10 5h4M11 18h2"/>
+          </svg>
+        </div>
+        <h3>Mobile Applications</h3>
+        <p>
+          Our focus is on creating accessible, intuitive mobile
+          products that make digital experiences more convenient
+          and enjoyable.
+        </p>
+      </article>
+
+      <article class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 2L3 7v10l9 5 9-5V7z"/>
+            <path d="M3 7l9 5 9-5M12 12v10"/>
+          </svg>
+        </div>
+        <h3>Digital Innovation</h3>
+        <p>
+          We value creative thinking, practical technology and
+          continuous improvement in the development of digital
+          products.
+        </p>
+      </article>
+
+      <article class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 2l8 4v6c0 5-4 8-8 10-4-2-8-5-8-10V6z"/>
+            <path d="M8 12l3 3 5-6"/>
+          </svg>
+        </div>
+        <h3>Privacy &amp; Responsibility</h3>
+        <p>
+          We aim to respect user privacy, communicate transparently
+          and consider responsible data practices throughout
+          product development.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="container about-grid">
+    <div class="about-art">
+      <div class="about-monogram">
+        <strong>BR</strong>
+        <p>BLOCK RE LTD</p>
+      </div>
+    </div>
+
+    <div class="about-content">
+      <span class="eyebrow">About Our Company</span>
+      <h2>Technology built around people.</h2>
+
+      <p>
+        BLOCK RE LTD is focused on digital product development,
+        mobile technology and user-centered innovation.
+      </p>
+
+      <p>
+        Our vision is to develop meaningful digital experiences
+        that combine simplicity, functionality and thoughtful
+        design. We believe technology should be approachable,
+        useful and designed with respect for the people who use it.
+      </p>
+
+      <ul class="principles">
+        <li><span class="check">✓</span> Quality-focused product development</li>
+        <li><span class="check">✓</span> Accessible and intuitive experiences</li>
+        <li><span class="check">✓</span> Transparent communication</li>
+        <li><span class="check">✓</span> Continuous learning and improvement</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="products">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">Our Product Vision</span>
+      <h2>Ideas shaped into experiences.</h2>
+      <p>
+        Explore the areas of digital technology that guide our
+        product vision.
+      </p>
+    </div>
+
+    <div class="card-grid">
+      <article class="feature-card product-card">
+        <div class="product-number">01 / MOBILE</div>
+        <h3>Mobile Experiences</h3>
+        <p>
+          Convenient and engaging mobile applications, designed
+          with everyday usability in mind.
+        </p>
+      </article>
+
+      <article class="feature-card product-card">
+        <div class="product-number">02 / DIGITAL</div>
+        <h3>Digital Solutions</h3>
+        <p>
+          Exploring practical tools and digital experiences
+          that respond to evolving user needs.
+        </p>
+      </article>
+
+      <article class="feature-card product-card">
+        <div class="product-number">03 / CREATIVE</div>
+        <h3>Interactive Experiences</h3>
+        <p>
+          Combining creativity, visual design and technology
+          to make digital interaction more engaging.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="privacy-section" id="privacy">
+  <div class="container">
+    <div class="privacy-panel">
+      <div>
+        <span class="eyebrow">Privacy &amp; Transparency</span>
+        <h2>Your privacy matters.</h2>
+        <p>
+          Product-specific privacy policies will explain relevant
+          information collection, usage, third-party services
+          and available privacy choices. Our privacy center is
+          currently being prepared.
+        </p>
+      </div>
+      <a href="#contact" class="btn btn-secondary">
+        Privacy Information →
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="container contact-grid">
+    <div class="contact-content">
+      <span class="eyebrow">Get In Touch</span>
+      <h2>Let's start a conversation.</h2>
+      <p>
+        For general company enquiries, product information,
+        customer support and privacy-related questions,
+        our official communication channels will be published
+        here once they are configured.
+      </p>
+    </div>
+
+    <div class="contact-card">
+      <div class="contact-row">
+        <div class="contact-symbol" aria-hidden="true">◈</div>
+        <div>
+          <strong>Organization</strong>
+          <p>BLOCK RE LTD</p>
+        </div>
+      </div>
+
+      <div class="contact-row">
+        <div class="contact-symbol" aria-hidden="true">◎</div>
+        <div>
+          <strong>Official Website Domain</strong>
+          <p>blockreltd.online</p>
+        </div>
+      </div>
+
+      <div class="contact-row">
+        <div class="contact-symbol" aria-hidden="true">✉</div>
+        <div>
+          <strong>Business Email</strong>
+          <p>Official business email is being configured.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-company">
+        <a href="#top" class="brand">
+          <div class="brand-mark">
+            <svg viewBox="0 0 40 40" aria-hidden="true">
+              <path d="M7 4h17l9 8-9 8 9 8-9 8H7V4zm8 8v5h8l3-3-3-2h-8zm0 15v4h8l3-2-3-2h-8z" fill="currentColor"/>
+            </svg>
+          </div>
+          <div>
+            <div class="brand-name">BLOCK RE LTD</div>
+            <div class="brand-sub">Digital Innovation</div>
+          </div>
+        </a>
+
+        <p class="footer-intro">
+          Building thoughtful digital products through innovation,
+          creativity and responsible technology.
+        </p>
+      </div>
+
+      <div class="footer-column">
+        <h3>Company</h3>
+        <a href="#top">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#products">Our Products</a>
+      </div>
+
+      <div class="footer-column">
+        <h3>Information &amp; Support</h3>
+        <a href="#privacy">Privacy Information</a>
+        <a href="#contact">Contact Us</a>
+        <a href="#contact">Customer Support</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>
+        &copy; <span id="year">2026</span> BLOCK RE LTD.
+        All rights reserved.
+      </span>
+      <a class="back-top" href="#top">Back to top ↑</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+const menuToggle = document.getElementById("menuToggle");
+const navigation = document.getElementById("navigation");
+
+function closeMenu() {
+  navigation.classList.remove("open");
+  menuToggle.setAttribute("aria-expanded", "false");
+}
+
+menuToggle.addEventListener("click", function () {
+  const isOpen = navigation.classList.toggle("open");
+  menuToggle.setAttribute("aria-expanded", String(isOpen));
+});
+
+navigation.querySelectorAll("a").forEach(function (link) {
+  link.addEventListener("click", closeMenu);
+});
+
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Escape") {
+    closeMenu();
+  }
+});
+
+window.addEventListener("resize", function () {
+  if (window.innerWidth > 760) {
+    closeMenu();
+  }
+});
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+</script>
+
+</body>
+</html>
